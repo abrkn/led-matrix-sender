@@ -4,7 +4,8 @@ var Canvas = require('canvas')
 , async = require('async')
 , director = require('./director')
 , scene = null
-, sender = require('./sender')(process.argv[2] || '127.0.0.1', 9000)
+, config = require('konfu')
+, sender = require('./sender')(process.argv[2] || config.ip || '127.0.0.1', config.port || 9000)
 
 async.forever(function(next) {
     ctx.fillStyle = 'black'
@@ -22,6 +23,6 @@ async.forever(function(next) {
     ctx.restore()
 
     sender(canvas.toBuffer(), function() {
-        setTimeout(next, 15)
+        setTimeout(next, config.interval || 15)
     })
 })
