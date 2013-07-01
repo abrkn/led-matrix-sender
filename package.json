@@ -1,5 +1,5 @@
 {
-  "name": "sender-test",
+  "name": "led-matrix-sender",
   "version": "0.0.1",
   "dependencies": {
     "put": "0.0.6",
