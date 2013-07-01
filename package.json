@@ -8,5 +8,8 @@
     "lodash": "~1.3.1",
     "debug": "~0.7.2",
     "ws": "~0.4.27"
+  },
+  "scripts": {
+    "led-matrix-sender": "./bin/led-matrix-sender"
   }
 }
