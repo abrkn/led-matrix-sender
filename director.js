@@ -12,13 +12,13 @@ module.exports = function() {
     if (false && !startupShown) {
         debug('showing startup')
         startupShown = true
-        return new Startup(64, 32)
+        return new Startup(32 * 6, 32)
     }
 
     if (current == 'scroller') {
         current = 'transactions'
         debug('showing %s', current)
-        return new Transactions(64, 32, 1000)
+        return new Transactions(32 * 6, 32, 1000)
     } else {
         current = 'scroller'
         debug('showing %s', current)
@@ -28,7 +28,7 @@ module.exports = function() {
                 y: 0,
                 scene: new JustcoinMarketStats({
                     font: '20px Consolas',
-                    width: 32  * 2,
+                    width: 32  * 6,
                     height: 16,
                     color: 'green',
                     offsetY: -4,
@@ -39,7 +39,7 @@ module.exports = function() {
                 x: 0,
                 y: 16,
                 scene: new CoindeskNews({
-                    width: 32 * 2,
+                    width: 32 * 6,
                     height: 16,
                     speed: 0.6,
                     font: '22px Consolas'
