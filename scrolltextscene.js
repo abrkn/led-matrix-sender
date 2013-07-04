@@ -10,7 +10,8 @@ var ScrollTextScene = module.exports = function(opts) {
         speed: 1,
         font: '18px Consolas',
         color: 'white',
-        repeat: 0
+        repeat: 0,
+        offsetY: 0
     }, opts)
 }
 
@@ -36,7 +37,7 @@ ScrollTextScene.prototype.render = function(text) {
     innerCtx.textBaseline = 'middle'
     innerCtx.fillStyle = this.opts.color
     innerCtx.font = measureContext.font
-    innerCtx.fillText(text, 0, this.opts.height / 2)
+    innerCtx.fillText(text, 0, this.opts.offsetY + this.opts.height / 2)
 
     debug('render complete (%d px wide)', textWidth)
 }

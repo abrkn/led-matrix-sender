@@ -9,7 +9,7 @@ var startupShown = false
 , current
 
 module.exports = function() {
-    if (false && !startupShown) {
+    if (!startupShown) {
         debug('showing startup')
         startupShown = true
         return new Startup(32 * 6, 32)
@@ -31,7 +31,7 @@ module.exports = function() {
                     width: 32  * 6,
                     height: 16,
                     color: 'green',
-                    offsetY: -4,
+                    offsetY: -1,
                     repeat: 5
                 })
             },
@@ -42,7 +42,8 @@ module.exports = function() {
                     width: 32 * 6,
                     height: 16,
                     speed: 0.6,
-                    font: '22px Consolas'
+                    font: '13px Consolas',
+                    offsetY: 3
                 })
             }
         ])

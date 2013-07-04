@@ -45,7 +45,7 @@ var Transactions = module.exports = function(width, height, ticks) {
 
         var size = sum * 10
         size = Math.max(6, size)
-        size = Math.min(20, size)
+        size = Math.min(15, size)
 
         var colors = ['blue', 'yellow', 'white', 'red', 'orange', 'green']
 

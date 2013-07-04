@@ -10,7 +10,7 @@ var Startup = module.exports = function(width, height) {
 util.inherits(Startup, EventEmitter)
 
 Startup.prototype.draw = function(ctx) {
-    if (this.tick < 200) {
+    if (this.tick < 0) {
         for (var i = 0; i < 100; i++) {
             var x = Math.round(Math.random() * this.width)
             , y = Math.round(Math.random() * this.height)
@@ -19,9 +19,9 @@ Startup.prototype.draw = function(ctx) {
         }
     } else {
         ctx.fillStyle = 'white'
-        ctx.textBaseline = 'top'
+        ctx.textBaseline = 'middle'
         ctx.textAlign = 'center'
-        ctx.font = '15px Consolas'
+        ctx.font = '40px Consolas'
 
         var text
 
@@ -30,7 +30,7 @@ Startup.prototype.draw = function(ctx) {
         else if (this.tick < 500) text = 'CURRENCY'
         else text = 'EXCHANGE'
 
-        ctx.fillText(text, this.width / 2, 10)
+        ctx.fillText(text, this.width / 2, this.height / 2)
     }
 
     this.tick++

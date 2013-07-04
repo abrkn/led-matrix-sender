@@ -1,5 +1,5 @@
 var Canvas = require('canvas')
-, canvas = new Canvas(32 * 2, 32)
+, canvas = new Canvas(32 * 6, 32)
 , ctx = canvas.getContext('2d')
 , async = require('async')
 , director = require('./director')
@@ -23,6 +23,6 @@ async.forever(function(next) {
     ctx.restore()
 
     sender(canvas.toBuffer(), function() {
-        setTimeout(next, config.interval || 15)
+        setTimeout(next, config.interval || 25)
     })
 })
