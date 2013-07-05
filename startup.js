@@ -10,7 +10,7 @@ var Startup = module.exports = function(width, height) {
 util.inherits(Startup, EventEmitter)
 
 Startup.prototype.draw = function(ctx) {
-    if (this.tick < 0) {
+    if (this.tick < 200) {
         for (var i = 0; i < 100; i++) {
             var x = Math.round(Math.random() * this.width)
             , y = Math.round(Math.random() * this.height)

@@ -3,7 +3,11 @@ var JustcoinMarketStats = require('./justcoinmarketstats')
 , Combiner = require('./combiner')
 , Startup = require('./startup')
 , Transactions = require('./transactions')
+, Image = require('./image')
 , debug = require('debug')('director')
+, fs = require('fs')
+, Canvas = require('canvas')
+, joinPath = require('path').join
 
 var startupShown = false
 , current
@@ -15,10 +19,14 @@ module.exports = function() {
         return new Startup(32 * 6, 32)
     }
 
-    if (current == 'scroller') {
-        current = 'transactions'
-        debug('showing %s', current)
-        return new Transactions(32 * 6, 32, 1000)
+    if (!current || current == 'scroller') {
+        debug('cvpartner')
+        current = 'cvpartner'
+        var img = new Canvas.Image()
+        img.src = fs.readFileSync(joinPath(__dirname, 'cvpartner.png'))
+        return new Image(img, {
+            ticks: 3500
+        })
     } else {
         current = 'scroller'
         debug('showing %s', current)
