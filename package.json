@@ -1,6 +1,6 @@
 {
   "name": "led-matrix-sender",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "dependencies": {
     "put": "0.0.6",
     "async": "~0.2.9",
